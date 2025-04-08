@@ -1,1 +1,70 @@
+#Defining a class
+class my_car:
 
+    #Attributes
+    model = "BMW"
+    color = "Black"
+    year = 2025
+    price = 5000000
+    #Pass Methods
+    def drive(self):
+        print("I own a car that drives itself")
+
+#inheritance
+class my_bike(my_car):
+    pass
+
+
+vehicle = my_bike()
+print(vehicle.model)
+print(vehicle.color)
+print(vehicle.year)
+print(vehicle.price)
+
+#Constructors
+
+class Car:
+    def __init__(self, colour, model, year, price):
+        self.colour = colour
+        self.model = model
+        self.year = year
+        self.price = price
+
+my_car = Car("Black", "BMW", 2025, 5000000)
+my_bike = Car("Red", "Yamaha", 2022, 1500000)
+print(my_bike.colour)
+print(my_bike.model) 
+print(my_car.year)
+print(my_car.price)
+
+
+# polymorphism
+class Car:
+    def revv(self):
+        return "Smooth!"
+
+class Bike:
+    def revv(self):
+        return "Vroom!"
+
+# Polymorphism in action
+for vehicle in [Car(), Bike()]:
+    print(vehicle.revv())
+
+# # Encapsulation
+class VehicleCount:
+    def __init__(self):
+        self.__vehicle = 0  # Private attribute
+
+    def inquire_vehicle_count(self):
+        if self.__vehicle > 0:
+            self.__vehicle -= 1
+            print("Few vehicles in garage!")
+        else:
+            print("No vehicle in garage!")
+
+vehicle = VehicleCount()
+vehicle.inquire_vehicle_count()
+
+
+    
